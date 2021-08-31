@@ -5,6 +5,7 @@ class Program{
   #searchButton = new SearchButton(this);
 
   // 버튼의 검색전략을 변경할 메소드 제공
+  // 전략을 갈아끼우는 부분
   setModeAll(){
     this.#searchButton.setSearchStrategy(new SearchStrategyAll());
   };
