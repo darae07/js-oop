@@ -1,3 +1,6 @@
+// command class
+// 커맨드 객체는 수신자 객체를 가지고 있으며, 수신자의 메서드를 호출
+
 class Command {
   robot;
 
@@ -7,6 +10,9 @@ class Command {
 
   execute(){};
 };
+
+
+// concrete commands
 
 class MoveForwardCommand extends Command {
   constructor (_space) {

@@ -1,3 +1,6 @@
+// receiver class
+// 수신자는 자신에게 정의된 메서드를 수행한다.
+
 class Robot {
   Direction = {LEFT: 'l', RIGHT: 'r'};
   // aditional code - 로봇의 좌표를 기록
