@@ -1,5 +1,6 @@
 const RobotKit = require('./robotKit');
-const {MoveForwardCommand, TurnCommand, PickupCommand} = require('./command');
+const {MoveForwardCommand, TurnCommand, PickupCommand, CommandOrderAdapter} = require('./command');
+const {MoveBackOrder} = require('./order');
 
 // client class
 // 클라이언트 객체는 발동자 객체와 하나 이상의 커맨드 객체를 보유한다. 
@@ -15,6 +16,7 @@ class Program {
     this.robotkit.addCommand(new MoveForwardCommand(1));
     this.robotkit.addCommand(new TurnCommand('r'));
     this.robotkit.addCommand(new PickupCommand());
+    this.robotkit.addCommand(new CommandOrderAdapter(new MoveBackOrder(1)))
 
     this.robotkit.start();
   };

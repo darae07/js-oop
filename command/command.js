@@ -53,6 +53,18 @@ class PickupCommand extends Command {
   };
 };
 
+class CommandOrderAdapter extends Command {
+  constructor(_order){
+    super();
+    this.order = _order;
+  };
+
+  execute () {
+    this.order.run(this.robot);
+  }
+}
+
 exports.MoveForwardCommand = MoveForwardCommand;
 exports.TurnCommand = TurnCommand;
 exports.PickupCommand = PickupCommand;
+exports.CommandOrderAdapter = CommandOrderAdapter;
