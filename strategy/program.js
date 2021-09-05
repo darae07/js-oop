@@ -22,6 +22,7 @@ class Program{
     this.#searchButton.setSearchStrategy(new SearchStrategyMap());
   };
 
+  // findAlgorithm전략을 adapter로 감싸서 갈아끼움.
   setModeMovie(){
     this.#searchButton.setSearchStrategy(new SearchFindAdapter(new FindMovieAlgorithm()));
   }

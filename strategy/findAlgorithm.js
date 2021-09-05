@@ -1,3 +1,5 @@
+// interface가 기존 전략과 다르게 작성됨 
+
 class FindAlgorithm {
   find (global) {};
 };

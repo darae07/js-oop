@@ -48,7 +48,9 @@ class SearchStrategyMap extends SearchStrategy{
   }
 };
 
+// adapter 추가
 class SearchFindAdapter extends SearchStrategy {
+  //findAlgorithm을 상속받은 객체를 저장
   constructor(_findAlogrithm){
     super();
     this.findAlgorithm = _findAlogrithm;
