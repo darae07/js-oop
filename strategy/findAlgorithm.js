@@ -13,4 +13,3 @@ class FindMovieAlgorithm extends FindAlgorithm {
 };
 
 exports.FindMovieAlgorithm = FindMovieAlgorithm;
-exports.FindAlgorithm = FindAlgorithm;
