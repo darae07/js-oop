@@ -1,6 +1,6 @@
 const SearchButton = require('./searchButton');
-const { SearchStrategyAll, SearchStrategyImage, SearchStrategyNews, SearchStrategyMap } = require('./searchStrategy');
-
+const { SearchStrategyAll, SearchStrategyImage, SearchStrategyNews, SearchStrategyMap, SearchFindAdapter } = require('./searchStrategy');
+const {FindMovieAlgorithm} = require('./findAlgorithm');
 class Program{
   #searchButton = new SearchButton(this);
 
@@ -22,6 +22,9 @@ class Program{
     this.#searchButton.setSearchStrategy(new SearchStrategyMap());
   };
 
+  setModeMovie(){
+    this.#searchButton.setSearchStrategy(new SearchFindAdapter(new FindMovieAlgorithm()));
+  }
   testProgram(){
     this.#searchButton.onClick();
     this.setModeImage();
@@ -29,6 +32,8 @@ class Program{
     this.setModeNews();
     this.#searchButton.onClick();
     this.setModeMap();
+    this.#searchButton.onClick();
+    this.setModeMovie();
     this.#searchButton.onClick();
   }
 }

@@ -1,3 +1,6 @@
+const {FindAlgorithm} = require('./findAlgorithm');
+
+
 // 전략 패턴: 객체들이 할 수 있는 행위 각각에 대한 클래스를 생성하고, 
 // 유사한 행위들을 캡슐화하는 인터페이스를 정의하여,
 // 객체의 행위를 동적으로 바꾸고 싶은 경우 직접 행위를 수정하지 않고 전략을 바꾸는 접근으로 행위를 유연하게 확장하는 방법.
@@ -45,7 +48,20 @@ class SearchStrategyMap extends SearchStrategy{
   }
 };
 
+class SearchFindAdapter extends SearchStrategy {
+  constructor(_findAlogrithm){
+    super();
+    this.findAlgorithm = _findAlogrithm;
+  }
+
+  search(){
+    super.search();
+    this.findAlgorithm.find(true);
+  };
+};
+
 exports.SearchStrategyAll = SearchStrategyAll;
 exports.SearchStrategyImage = SearchStrategyImage;
 exports.SearchStrategyNews = SearchStrategyNews;
 exports.SearchStrategyMap = SearchStrategyMap;
+exports.SearchFindAdapter = SearchFindAdapter;
