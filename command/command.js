@@ -4,8 +4,8 @@
 class Command {
   robot;
 
-  setRobot (_robot) {
-    this.robot = _robot;
+  setRobot (robot) {
+    this.robot = robot;
   };
 
   execute(){};
@@ -15,28 +15,20 @@ class Command {
 // concrete commands
 
 class MoveForwardCommand extends Command {
-  constructor (_space) {
+  constructor (space) {
     super();
-    this.space = _space;
+    this.space = space;
   };
-  space;
-  moveForwardCommand (_space) {
-    this.space = _space;
-  };
-
+ 
   execute () {
     this.robot.moveForward(this.space);
   };
 };
 
 class TurnCommand extends Command {
-  constructor (_direction) {
+  constructor (direction) {
     super();
-    this.direction = _direction;
-  };
-  direction;
-  TurnCommand (_direction) {
-    this.direction = _direction;
+    this.direction = direction;
   };
 
   execute () {
