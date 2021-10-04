@@ -7,7 +7,7 @@ class DecoratorPattern {
   constructor() {
     new XWingFighter().attack();
 
-    new LaserDecorator(new XWingFighter().attack);
+    new LaserDecorator(new XWingFighter()).attack;
 
     new PlasmaDecorator(
       new MissileDecorator(new LaserDecorator(new XWingFighter())),
