@@ -1,4 +1,5 @@
 import { Robot, Direction } from "./robot";
+import { Order } from "./order";
 
 abstract class Command {
   protected robot: Robot;
@@ -39,5 +40,22 @@ class PickupCommand extends Command {
     this.robot.pickup();
   }
 }
+class CommandOrderAdaptor extends Command {
+  private order: Order;
+  constructor(order: Order) {
+    super();
+    this.order = order;
+  }
 
-export { MoveForwardCommand, TurnCommand, PickupCommand, Command };
+  public execute(): void {
+    this.order.run(this.robot);
+  }
+}
+
+export {
+  MoveForwardCommand,
+  TurnCommand,
+  PickupCommand,
+  Command,
+  CommandOrderAdaptor,
+};

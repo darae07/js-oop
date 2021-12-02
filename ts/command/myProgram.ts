@@ -1,6 +1,12 @@
 import { RoboKit } from "./robotKit";
 import { Direction } from "./robot";
-import { MoveForwardCommand, TurnCommand, PickupCommand } from "./command";
+import {
+  MoveForwardCommand,
+  TurnCommand,
+  PickupCommand,
+  CommandOrderAdaptor,
+} from "./command";
+import { MoveBackOrder } from "./order";
 
 class MyProgram {
   robotKit: RoboKit;
@@ -11,6 +17,7 @@ class MyProgram {
     this.robotKit.addCommand(new MoveForwardCommand(1));
     this.robotKit.addCommand(new TurnCommand(Direction.RIGHT));
     this.robotKit.addCommand(new PickupCommand());
+    this.robotKit.addCommand(new CommandOrderAdaptor(new MoveBackOrder(3)));
 
     this.robotKit.start();
   }
